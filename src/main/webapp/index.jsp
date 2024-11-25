@@ -1,8 +1,17 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: VICTUS
+  Date: 11/25/2024
+  Time: 5:34 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>GauGauMeoMeo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!-- Thanh điều hướng -->
@@ -31,7 +40,7 @@
     </section>
 
     <section class="benefits">
-        <div class="benefit" >
+        <div class="benefit">
             <span class="number">1</span>
             <p>An toàn</p>
         </div>
@@ -43,11 +52,11 @@
             <span class="number">3</span>
             <p>Sạch sẽ & Vệ sinh</p>
         </div>
-        <div class="benefit" >
+        <div class="benefit">
             <span class="number">4</span>
             <p>Thoải mái</p>
         </div>
-        <div class="benefit" >
+        <div class="benefit">
             <span class="number">5</span>
             <p>Sức khỏe là trên hết</p>
         </div>
@@ -65,7 +74,6 @@
             <div class="card"><img src="image/cs6_trangchu.png" alt="Cat grooming"></div>
         </div>
     </section>
-
 
     <footer class="footer">
         <div class="newsletter">
@@ -115,7 +123,6 @@
             <a href="https://www.facebook.com/tuyen.tranthimy.52"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/river_t04/"><i class="fab fa-instagram"></i></a>
         </div>
-        </div>
     </footer>
 </main>
 
@@ -123,7 +130,7 @@
     <div class="modal-content">
         <span class="close-button">&times;</span>
         <h2>Đặt Lịch Hẹn</h2>
-        <form>
+        <form action="AppointmentServlet" method="post">
             <label for="name">Tên của bạn:</label>
             <input type="text" id="name" name="name" required>
 
@@ -147,8 +154,5 @@
         </form>
     </div>
 </div>
-
-
-
 </body>
 </html>
