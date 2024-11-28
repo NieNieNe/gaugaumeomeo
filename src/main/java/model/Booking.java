@@ -1,9 +1,10 @@
 package model;
+
 import java.util.Date;
 
-public class Appointment {
+public class Booking {
     private long idAppoint;
-    private String appointment;
+    private Appointment appointment;
     private Date date;
     private Service service;
 
