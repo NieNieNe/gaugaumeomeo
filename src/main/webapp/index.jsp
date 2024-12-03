@@ -124,35 +124,75 @@
             <a href="https://www.instagram.com/river_t04/"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
-</main>
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Đặt Lịch Hẹn</h2>
+            <form action="AppointmentServlet" method="post">
+                <label for="name">Tên của bạn:</label>
+                <input type="text" id="name" name="name" required>
 
-<div id="appointmentModal" class="modal">
-    <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h2>Đặt Lịch Hẹn</h2>
-        <form action="AppointmentServlet" method="post">
-            <label for="name">Tên của bạn:</label>
-            <input type="text" id="name" name="name" required>
+                <label for="phone">Số điện thoại:</label>
+                <input type="tel" id="phone" name="phone" required>
 
-            <label for="phone">Số điện thoại:</label>
-            <input type="tel" id="phone" name="phone" required>
+                <label for="date">Chọn ngày:</label>
+                <input type="date" id="date" name="date" required>
 
-            <label for="date">Chọn ngày:</label>
-            <input type="date" id="date" name="date" required>
+                <label for="time">Chọn giờ:</label>
+                <input type="time" id="time" name="time" required>
 
-            <label for="time">Chọn giờ:</label>
-            <input type="time" id="time" name="time" required>
+                <label for="service">Dịch vụ:</label>
+                <select id="service" name="service">
+                    <option value="grooming">Chăm sóc lông</option>
+                    <option value="bathing">Tắm</option>
+                    <option value="nail">Cắt móng</option>
+                </select>
 
-            <label for="service">Dịch vụ:</label>
-            <select id="service" name="service">
-                <option value="grooming">Chăm sóc lông</option>
-                <option value="bathing">Tắm</option>
-                <option value="nail">Cắt móng</option>
-            </select>
-
-            <button type="submit">Đặt Lịch</button>
-        </form>
+                <button type="submit">Đặt Lịch</button>
+            </form>
+        </div>
     </div>
-</div>
+
+    <div id="appointmentChoiceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Bạn đã có tài khoản chưa?</h2>
+            <button id="hasAccountButton">Đã có tài khoản</button>
+            <button id="noAccountButton">Chưa có tài khoản</button>
+        </div>
+    </div>
+</main>
+<script>
+    // JavaScript xử lý modal "Đặt Hẹn"
+    const appointmentButton = document.getElementById('appointmentButton');
+    const appointmentChoiceModal = document.getElementById('appointmentChoiceModal');
+    const closeModalButtons = document.querySelectorAll('.close-button');
+    const hasAccountButton = document.getElementById('hasAccountButton');
+    const noAccountButton = document.getElementById('noAccountButton');
+
+    appointmentButton.addEventListener('click', () => {
+        appointmentChoiceModal.style.display = 'block';
+    });
+
+    closeModalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            appointmentChoiceModal.style.display = 'none';
+        });
+    });
+
+    hasAccountButton.addEventListener('click', () => {
+        window.location.href = 'login.jsp'; // Trang đăng nhập
+    });
+
+    noAccountButton.addEventListener('click', () => {
+        window.location.href = 'appointmentNoAccount.jsp'; // Trang không có tài khoản
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === appointmentChoiceModal) {
+            appointmentChoiceModal.style.display = 'none';
+        }
+    });
+</script>
 </body>
 </html>
