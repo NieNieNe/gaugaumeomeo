@@ -1,10 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    margin: 0;
     font-family: 'Arial', sans-serif;
     background: linear-gradient(45deg, #f3a683, #f7d794);
     display: flex;
@@ -14,7 +9,7 @@ body {
     color: #444;
 }
 
-.login-container {
+.register-container {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 20px;
@@ -23,42 +18,44 @@ body {
     width: 400px;
 }
 
-.login-container h2 {
+.register-container h2 {
     margin-bottom: 15px;
     color: #333;
     font-size: 26px;
     font-weight: bold;
 }
 
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.form-group label {
+.register-container .register-intro {
     font-size: 14px;
-    margin-bottom: 5px;
-    display: block;
-    color: #555;
+    color: #666;
+    margin-bottom: 20px;
 }
 
-.form-group input {
+.register-container img {
+    width: 100px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.register-container input {
     width: 100%;
     padding: 12px;
-    font-size: 16px;
+    margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 8px;
+    font-size: 16px;
     background-color: #f9f9f9;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s ease;
 }
 
-.form-group input:focus {
+.register-container input:focus {
     border-color: #f3a683;
     outline: none;
 }
 
-button {
+.register-container button {
     width: 100%;
     padding: 14px;
     background-color: #f3a683;
@@ -71,23 +68,23 @@ button {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
+.register-container button:hover {
     background-color: #e77f67;
     transform: scale(1.03);
 }
 
-.footer {
+.register-container .footer-text {
     margin-top: 20px;
     font-size: 14px;
     color: #666;
 }
 
-.footer a {
+.register-container .footer-text a {
     color: #f3a683;
     font-weight: bold;
     text-decoration: none;
 }
 
-.footer a:hover {
+.register-container .footer-text a:hover {
     text-decoration: underline;
 }

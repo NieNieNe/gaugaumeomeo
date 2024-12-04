@@ -12,13 +12,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập - PetCare</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
 <div class="login-container">
     <h2>Đăng nhập vào PetCare</h2>
     <form action="login" method="post">
+        <c:if test="${not empty errorMessage}">
+        <p style="color: red;">${errorMessage}</p>
+        </c:if>
         <div class="form-group">
+
             <label for="username">Tên đăng nhập</label>
             <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" required>
         </div>
@@ -31,6 +35,7 @@
     <div class="footer">
         Chưa có tài khoản? <a href="register.jsp">Đăng ký ngay</a>
     </div>
+
 </div>
 </body>
 </html>
