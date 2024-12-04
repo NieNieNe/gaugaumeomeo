@@ -163,7 +163,7 @@
     </div>
 </main>
 <script>
-    // JavaScript xử lý modal "Đặt Hẹn"
+    // JavaScript xử lý modal "Đặt Hẹn" // Hiện pop up
     const appointmentButton = document.getElementById('appointmentButton');
     const appointmentChoiceModal = document.getElementById('appointmentChoiceModal');
     const closeModalButtons = document.querySelectorAll('.close-button');
@@ -192,6 +192,50 @@
         if (event.target === appointmentChoiceModal) {
             appointmentChoiceModal.style.display = 'none';
         }
+    });
+</script>
+<div id="confirmationModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Xác Nhận Thông Tin</h2>
+        <p>Họ và tên: ${clientName}</p>
+        <p>Số điện thoại: ${phoneNumber}</p>
+        <p>Email: ${email}</p>
+        <p>Tên thú cưng: ${petName}</p>
+        <p>Dịch vụ: ${service}</p>
+        <button id="confirmButton">Gửi</button>
+    </div>
+</div>
+
+<script>
+    // Lấy modal và các nút cần thao tác
+    const confirmationModal = document.getElementById("confirmationModal");
+    const closeButton = document.querySelector(".close-button");
+    const confirmButton = document.getElementById("confirmButton");
+
+    // Hiển thị modal (Gọi hàm này khi cần mở modal, ví dụ sau khi người dùng nhập thông tin)
+    function showConfirmationModal() {
+        confirmationModal.style.display = "block";
+    }
+
+    // Đóng modal khi nhấn vào nút đóng
+    closeButton.addEventListener("click", function () {
+        confirmationModal.style.display = "none";
+    });
+
+    // Đóng modal khi nhấn bên ngoài modal
+    window.addEventListener("click", function (event) {
+        if (event.target === confirmationModal) {
+            confirmationModal.style.display = "none";
+        }
+    });
+
+    // Gửi thông tin khi nhấn vào nút "Gửi"
+    confirmButton.addEventListener("click", function () {
+        alert("Đặt lịch thành công!");
+        confirmationModal.style.display = "none";
+
+        // Tùy chỉnh thêm logic gửi thông tin lên server ở đây nếu cần.
     });
 </script>
 </body>

@@ -13,7 +13,6 @@
 </head>
 <body>
 <h1> ${message}</h1>
-
 <a href="index.jsp"> Quay lại trang chủ </a>
 
 </body>
