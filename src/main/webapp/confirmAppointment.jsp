@@ -1,19 +1,60 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: VICTUS
-  Date: 11/25/2024
-  Time: 5:38 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Xác Nhận Đặt Lịch</title>
+    <link rel="stylesheet" type="text/css" href="css/confirmAppointment.css">
 </head>
 <body>
-<h1> ${message}</h1>
-<a href="index.jsp"> Quay lại trang chủ </a>
 
+<!-- Modal Xác Nhận -->
+<div id="confirmationModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Xác Nhận Thông Tin</h2>
+        <p>Họ và tên: <strong>${requestScope.clientName}</strong></p>
+        <p>Số điện thoại: <strong>${requestScope.phoneNumber}</strong></p>
+        <p>Email: <strong>${requestScope.email}</strong></p>
+        <p>Tên thú cưng: <strong>${requestScope.petName}</strong></p>
+        <p>Dịch vụ: <strong>${requestScope.service}</strong></p>
+        <button id="confirmButton">Gửi</button>
+    </div>
+</div>
+
+<script>
+    // Lấy modal và các nút cần thao tác
+    const confirmationModal = document.getElementById("confirmationModal");
+    const closeButton = document.querySelector(".close-button");
+    const confirmButton = document.getElementById("confirmButton");
+
+    // Hiển thị modal khi trang được tải
+    window.onload = function () {
+        confirmationModal.style.display = "block";
+    };
+
+    // Đóng modal khi nhấn vào nút đóng
+    closeButton.addEventListener("click", function () {
+        confirmationModal.style.display = "none";
+    });
+
+    // Đóng modal khi nhấn bên ngoài modal
+    window.addEventListener("click", function (event) {
+        if (event.target === confirmationModal) {
+            confirmationModal.style.display = "none";
+        }
+    });
+
+    // Xử lý khi nhấn vào nút "Gửi"
+    confirmButton.addEventListener("click", function () {
+        alert("Đặt lịch thành công!");
+        confirmationModal.style.display = "none";
+
+        // Điều hướng về trang chủ
+        window.location.href = "index.jsp";
+    });
+</script>
+
+<!-- Nút quay lại -->
+<a href="index.jsp">Quay lại trang chủ</a>
 </body>
 </html>

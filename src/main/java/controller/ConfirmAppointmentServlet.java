@@ -6,20 +6,22 @@ import java.io.IOException;
 
 public class ConfirmAppointmentServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Lấy thông tin từ session hoặc request
-        String clientName = (String) request.getSession().getAttribute("clientName");
-        String phoneNumber = (String) request.getSession().getAttribute("phoneNumber");
-        String email = (String) request.getSession().getAttribute("email");
-        String petName = (String) request.getSession().getAttribute("petName");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Lấy thông tin từ request
+        String clientName = request.getParameter("clientName");
+        String phoneNumber = request.getParameter("phoneNumber");
+        String email = request.getParameter("email");
+        String petName = request.getParameter("petName");
         String service = request.getParameter("service");
-        String date = request.getParameter("date");
-        String time = request.getParameter("time");
 
-        // Lưu thông tin vào database hoặc xử lý logic
-        // ...
+        // Đưa dữ liệu vào request để gửi tới JSP
+        request.setAttribute("clientName", clientName);
+        request.setAttribute("phoneNumber", phoneNumber);
+        request.setAttribute("email", email);
+        request.setAttribute("petName", petName);
+        request.setAttribute("service", service);
 
-        // Thông báo thành công
-        response.getWriter().println("<script>alert('Đặt hẹn thành công!');window.location='index.jsp';</script>");
+        // Chuyển tiếp sang JSP
+        request.getRequestDispatcher("confirmAppointment.jsp").forward(request, response);
     }
 }

@@ -37,7 +37,7 @@
     <option value="nail">Cắt móng</option>
   </select>
 
-  <button type="submit">Xác Nhận</button>
+  <button type="submit"><a href="confirmAppointment.jsp">Xác Nhận </a> </button>
 </form>
 </body>
 </html>

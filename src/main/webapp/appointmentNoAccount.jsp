@@ -30,8 +30,23 @@
 
     <label for="petType">Loài thú cưng:</label>
     <input type="text" id="petType" name="petType" required>
+</form>
+<h2>Nhập Thông Tin Lịch Hẹn</h2>
+<form action="ConfirmAppointmentServlet" method="post">
+    <label for="date">Chọn ngày:</label>
+    <input type="date" id="date" name="date" required>
 
-    <button type="submit">Tiếp Theo</button>
+    <label for="time">Chọn giờ:</label>
+    <input type="time" id="time" name="time" required>
+
+    <label for="service">Chọn dịch vụ:</label>
+    <select id="service" name="service">
+        <option value="grooming">Chăm sóc lông</option>
+        <option value="bathing">Tắm</option>
+        <option value="nail">Cắt móng</option>
+    </select>
+
+    <button type="submit"><a href="confirmAppointment.jsp">Xác Nhận </a> </button>
 </form>
 </body>
 </html>
