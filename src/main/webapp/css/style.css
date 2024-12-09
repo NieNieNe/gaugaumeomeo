@@ -189,3 +189,21 @@ body {
 .close-button:hover {
     color: #000;
 }
+.profile-button {
+    background-color: #a00000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.profile-button:hover {
+    background-color: #880000; /* Màu tối hơn khi hover */
+}
+
+

@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="javax.servlet.http.HttpSession" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +16,17 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<%
+    // Sử dụng biến session mặc định của JSP
+    String username = (String) session.getAttribute("username");
+
+    if (username != null) { %>
+<a href="profile.jsp" class="profile-button">Hồ sơ</a>
+<%
+
+    }
+%>
+
 <!-- Thanh điều hướng -->
 <header>
     <nav class="navbar">
@@ -28,11 +41,13 @@
             <li><a href="#">VIPet</a></li>
         </ul>
         <button id="appointmentButton" class="appointment-button">Đặt Hẹn</button>
+
     </nav>
 </header>
 
 <!-- Phần nội dung chính -->
 <main>
+
     <section class="service-description">
         <h1>Chăm sóc lông</h1>
         <p>Chăm sóc lông là điều cần thiết để giữ cho thú cưng của bạn trông xinh đẹp tuyệt vời...</p>
