@@ -1,0 +1,188 @@
+/* Đặt kiểu chung */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fdfaf4;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #a00000;
+}
+
+.nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav .active {
+    color: #a00000;
+}
+
+.btn-appointment {
+    background-color: #a00000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-appointment:hover {
+    background-color: #880000;
+}
+
+/* VIPet Intro Section */
+.vipet-intro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #fffbf3;
+}
+
+.intro-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.intro-text {
+    max-width: 600px;
+    margin-left: 30px;
+}
+
+.intro-text h1 {
+    color: #a00000;
+    font-size: 2em;
+}
+
+.intro-text p {
+    line-height: 1.8;
+    margin-top: 15px;
+}
+
+/* VIPet Benefits Section */
+.vipet-benefits {
+    padding: 50px 20px;
+    background-color: #fdfaf4;
+    text-align: center;
+}
+
+.vipet-benefits h2 {
+    color: #a00000;
+    margin-bottom: 30px;
+}
+
+.benefits-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.benefit {
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.benefit h3 {
+    color: #002766;
+    font-size: 1.2em;
+}
+
+.benefit p {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+/* VIPet Form Section */
+.vipet-form {
+    padding: 50px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.vipet-form h2 {
+    color: #a00000;
+    margin-bottom: 30px;
+}
+
+.vipet-form form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vipet-form label {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.vipet-form input,
+.vipet-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.vipet-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.btn-submit {
+    background-color: #a00000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-submit:hover {
+    background-color: #880000;
+}
+
+/* Footer */
+.footer {
+    background-color: #002766;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9em;
+}

@@ -20,8 +20,5 @@ public class AppointmentNoAccountServlet extends HttpServlet {
         session.setAttribute("email", email);
         session.setAttribute("petName", petName);
         session.setAttribute("petType", petType);
-
-        // Chuyển hướng đến trang nhập thông tin lịch hẹn
-        response.sendRedirect("appointmentDetails.jsp");
     }
 }
