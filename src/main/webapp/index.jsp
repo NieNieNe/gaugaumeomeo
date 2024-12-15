@@ -38,7 +38,7 @@
             <li><a href="#">Các Dịch Vụ</a></li>
             <li><a href="#">Cộng Đồng</a></li>
             <li><a href="#">Các Chi Nhánh</a></li>
-            <li><a href="#">VIPet</a></li>
+            <li><a href="VIPet.jsp">VIPet</a></li>
         </ul>
         <button id="appointmentButton" class="appointment-button">Đặt Hẹn</button>
 
