@@ -17,7 +17,7 @@
 </head>
 <body>
 <%
-    // Sử dụng biến session mặc định của JSP
+
     String username = (String) session.getAttribute("username");
 
     if (username != null) { %>
