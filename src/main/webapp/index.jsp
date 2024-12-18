@@ -141,6 +141,7 @@
     </footer>
 
     <div id="appointmentChoiceModal" class="modal">
+        <link rel="stylesheet" href="css/appointmentChoiceModal.css">
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <h2>Bạn đã có tài khoản chưa?</h2>
@@ -168,7 +169,7 @@
     });
 
     hasAccountButton.addEventListener('click', () => {
-        window.location.href = 'login.jsp'; // Trang đăng nhập
+        window.location.href = 'appointmentHaveAccount.jsp'; // Trang đăng nhập
     });
 
     noAccountButton.addEventListener('click', () => {

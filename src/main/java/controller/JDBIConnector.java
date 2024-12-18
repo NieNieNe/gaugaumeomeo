@@ -2,7 +2,6 @@ package controller;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
 import org.jdbi.v3.core.Jdbi;
-
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.List;

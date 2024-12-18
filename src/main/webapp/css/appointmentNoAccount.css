@@ -1,0 +1,55 @@
+/* Container của form */
+.appointment-form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f3e7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+}
+
+/* Tiêu đề */
+.appointment-form-container h2 {
+    color: #002766;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Nhãn và input */
+.appointment-form-container label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.appointment-form-container input,
+.appointment-form-container select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Checkbox */
+.appointment-form-container input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+/* Nút xác nhận */
+.confirm-button {
+    background-color: #a00000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.confirm-button:hover {
+    background-color: #880000;
+}

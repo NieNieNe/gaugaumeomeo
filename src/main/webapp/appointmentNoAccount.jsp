@@ -5,48 +5,60 @@
   Time: 8:24 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Thông Tin Khách Hàng</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Đặt Hẹn Không Có Tài Khoản</title>
+    <link rel="stylesheet" href="css/appointmentNoAccount.css"> <!-- Đảm bảo file CSS đã được liên kết -->
 </head>
 <body>
-<h2>Nhập Thông Tin Khách Hàng</h2>
-<form action="AppointmentNoAccountServlet" method="post">
-    <label for="name">Họ và tên:</label>
-    <input type="text" id="name" name="name" required>
+<div class="appointment-form-container">
+    <h2>Thông tin Đơn Hẹn:</h2>
+    <form action="confirmAppointment.jsp" method="post">
+        <!-- Họ và tên -->
+        <label for="fullName">Họ và Tên:</label>
+        <input type="text" id="fullName" name="fullName" required><br>
 
-    <label for="phoneNumber">Số điện thoại:</label>
-    <input type="text" id="phoneNumber" name="phoneNumber" required>
+        <!-- Số điện thoại -->
+        <label for="phone">Số điện thoại:</label>
+        <input type="tel" id="phone" name="phone" required><br>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
 
-    <label for="petName">Tên thú cưng:</label>
-    <input type="text" id="petName" name="petName" required>
+        <!-- Tên thú cưng -->
+        <label for="petName">Tên thú cưng:</label>
+        <input type="text" id="petName" name="petName" required>
 
-    <label for="petType">Loài thú cưng:</label>
-    <input type="text" id="petType" name="petType" required>
-</form>
-<h2>Nhập Thông Tin Lịch Hẹn</h2>
-<form action="ConfirmAppointmentServlet" method="post">
-    <label for="date">Chọn ngày:</label>
-    <input type="date" id="date" name="date" required>
+        <!-- Loại thú cưng -->
+        <label for="petType">Loại thú cưng:</label>
+        <select id="petType" name="petType">
+            <option value="dog">Chó</option>
+            <option value="cat">Mèo</option>
+            <option value="other">Khác</option>
+        </select><br>
 
-    <label for="time">Chọn giờ:</label>
-    <input type="time" id="time" name="time" required>
+        <!-- Chọn ngày -->
+        <label for="date">Chọn ngày:</label>
+        <input type="date" id="date" name="date" required>
 
-    <label for="service">Chọn dịch vụ:</label>
-    <select id="service" name="service">
-        <option value="grooming">Chăm sóc lông</option>
-        <option value="bathing">Tắm</option>
-        <option value="nail">Cắt móng</option>
-    </select>
+        <!-- Chọn giờ -->
+        <label for="time">Chọn giờ:</label>
+        <input type="time" id="time" name="time" required><br>
 
-    <button type="submit"><a href="confirmAppointment.jsp">Xác Nhận </a> </button>
-</form>
+        <!-- Chọn dịch vụ -->
+        <label>Chọn dịch vụ:</label><br>
+        <input type="checkbox" name="service" value="grooming"> Chăm sóc lông
+        <input type="checkbox" name="service" value="bathing"> Tắm
+        <input type="checkbox" name="service" value="nails"> Cắt móng
+        <input type="checkbox" name="service" value="deworm"> Sổ giun<br>
+
+        <!-- Nút xác nhận -->
+        <button type="submit" class="confirm-button">Xác nhận</button>
+    </form>
+</div>
 </body>
 </html>
