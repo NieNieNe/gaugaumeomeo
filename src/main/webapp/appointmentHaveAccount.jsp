@@ -6,14 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: VICTUS
-  Date: 12/4/2024
-  Time: 8:26 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
   // Giả lập thông tin từ request (sẽ nhận từ Servlet)
   String name = (String) request.getAttribute("name");
@@ -29,6 +21,24 @@
   <link rel="stylesheet" href="css/AppointmentHaveAccount.css">
 </head>
 <body>
+<!-- Thanh điều hướng -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="image/logo_trangchu.png" alt="Animal Doctors">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Về Chúng Tôi</a></li>
+      <li><a href="#">Các Dịch Vụ</a></li>
+      <li><a href="#">Cộng Đồng</a></li>
+      <li><a href="branches.html">Các Chi Nhánh</a></li>
+      <li><a href="VIPet.jsp">VIPet</a></li>
+    </ul>
+    <button id="appointmentButton" class="appointment-button">Đặt Hẹn</button>
+
+  </nav>
+</header>
+
 <!-- Main Content -->
 <div class="container">
   <h2>Thông tin Đơn Hẹn:</h2>
