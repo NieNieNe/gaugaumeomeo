@@ -36,7 +36,7 @@
         <ul class="nav-links">
             <li><a href="#">Về Chúng Tôi</a></li>
             <li><a href="#">Các Dịch Vụ</a></li>
-            <li><a href="#">Cộng Đồng</a></li>
+            <li><a href="outreach.html">Cộng Đồng</a></li>
             <li><a href="branches.html">Các Chi Nhánh</a></li>
             <li><a href="VIPet.jsp">VIPet</a></li>
         </ul>

@@ -1,0 +1,92 @@
+/* Đặt kiểu chung */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fdfaf4;
+}
+
+/* Thanh điều hướng */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.appointment-button {
+    background-color: #a00000;
+    color: #ffffff;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.hero {
+    text-align: center;
+    color: #510404;
+    margin-bottom: 20px;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+.hero h1 {
+    margin: 10px 0;
+    font-size: 2.5rem;
+    color: #333; /* Thay đổi màu chữ nếu cần */
+    font-weight: bold;
+}
+
+
+.section {
+    border-radius: 20px; /* Bo góc với bán kính 20px */
+    overflow: hidden; /* Ẩn phần nội dung vượt ra ngoài góc bo */
+    background-color: #f9f9f9; /* Màu nền tùy chọn */
+    padding: 20px; /* Khoảng cách nội dung bên trong */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+}
+
+.section p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.2rem;
+    color: #555;
+    text-align: justify;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #fff;
+}
+
+.footer {
+    background-color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    border-top: 1px solid #ddd;
+}

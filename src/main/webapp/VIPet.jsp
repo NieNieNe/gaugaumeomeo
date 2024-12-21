@@ -15,23 +15,27 @@
     <link rel="stylesheet" href="css/VIPet.css">
 </head>
 <body>
-<header class="header">
-    <div class="logo"><a href="index.jsp">GauGauMeoMeo </a> </div>
-    <nav class="nav">
-        <a href="#about">Về Chúng Tôi</a>
-        <a href="#services">Các Dịch Vụ</a>
-        <a href="#community">Cộng Đồng</a>
-        <a href="#branches">Các Chi Nhánh</a>
-        <a href="#careers">Việc Làm</a>
-        <a href="#vipet" class="active">VIPet</a>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="image/logo_trangchu.png" alt="Animal Doctors">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Về Chúng Tôi</a></li>
+            <li><a href="#">Các Dịch Vụ</a></li>
+            <li><a href="#">Cộng Đồng</a></li>
+            <li><a href="branches.html">Các Chi Nhánh</a></li>
+            <li><a href="VIPet.jsp">VIPet</a></li>
+        </ul>
+        <button id="appointmentButton" class="appointment-button">Đặt Hẹn</button>
+
     </nav>
-    <button class="btn-appointment">Đặt Hẹn</button>
 </header>
 
 <main>
     <section class="vipet-intro">
         <div class="intro-image">
-            <img src="image/VIPpet_intro.jpg" alt="VIPet Membership">
+            <img src="image/Vipet_img.png" alt="VIPet Membership">
         </div>
         <div class="intro-text">
             <h1>Thành viên VIPet</h1>
