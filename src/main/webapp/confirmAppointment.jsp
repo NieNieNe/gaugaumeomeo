@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
     <title>Xác Nhận Đặt Lịch</title>
-    <link rel="stylesheet" type="text/css" href="css/confirmAppointment.css">
 </head>
 <body>
 
 <!-- Modal Xác Nhận -->
 <div id="confirmationModal" class="modal">
+    <link rel="stylesheet" type="text/css" href="css/confirmAppointment.css">
     <div class="modal-content">
         <span class="close-button">&times;</span>
         <h2>Xác Nhận Thông Tin</h2>
@@ -53,8 +53,5 @@
         window.location.href = "index.jsp";
     });
 </script>
-
-<!-- Nút quay lại -->
-<a href="index.jsp">Quay lại trang chủ</a>
 </body>
 </html>

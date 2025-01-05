@@ -1,30 +1,39 @@
-/* Container của form */
-.appointment-form-container {
+/* Đặt hình nền toàn bộ trang */
+body {
+    background-image: url('../image/anh_appointment.jpg'); /* Đường dẫn đến hình ảnh nền */
+    background-size: cover; /* Phủ kín màn hình */
+    background-repeat: no-repeat; /* Không lặp lại */
+    background-position: center; /* Hiển thị ở giữa */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+.container {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
     background-color: #f9f3e7;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
 }
 
 /* Tiêu đề */
-.appointment-form-container h2 {
+.container h2 {
     color: #002766;
     text-align: center;
     margin-bottom: 20px;
 }
 
 /* Nhãn và input */
-.appointment-form-container label {
+.container label {
     font-weight: bold;
     display: block;
     margin: 10px 0 5px;
 }
 
-.appointment-form-container input,
-.appointment-form-container select {
+.container input,
+.container select {
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;
@@ -33,13 +42,13 @@
 }
 
 /* Checkbox */
-.appointment-form-container input[type="checkbox"] {
+.container input[type="checkbox"] {
     width: auto;
     margin-right: 5px;
 }
 
 /* Nút xác nhận */
-.confirm-button {
+.btn-submit {
     background-color: #a00000;
     color: #fff;
     padding: 10px 20px;
@@ -50,6 +59,6 @@
     width: 100%;
 }
 
-.confirm-button:hover {
+.btn-submit:hover {
     background-color: #880000;
 }

@@ -31,7 +31,7 @@
 <header>
     <nav class="navbar">
         <div class="logo">
-            <img src="image/logo_trangchu.png" alt="Animal Doctors">
+            <img src="image/logo.png" alt="Animal Doctors">
         </div>
         <ul class="nav-links">
             <li><a href="#">Về Chúng Tôi</a></li>
@@ -41,7 +41,6 @@
             <li><a href="VIPet.jsp">VIPet</a></li>
         </ul>
         <button id="appointmentButton" class="appointment-button">Đặt Hẹn</button>
-
     </nav>
 </header>
 
@@ -53,30 +52,16 @@
         <p>Chăm sóc lông là điều cần thiết để giữ cho thú cưng của bạn trông xinh đẹp tuyệt vời...</p>
         <p>Đôi bên cùng có lợi, cho bạn và cho thú cưng của bạn.</p>
     </section>
-
-    <section class="benefits">
-        <div class="benefit">
-            <span class="number">1</span>
-            <p>An toàn</p>
+    <div class="benefits">
+        <div class="dog-head">
+            <div class="label label-1">An toàn</div>
+            <div class="label label-2">Chất lượng cao</div>
+            <div class="label label-3">Sạch sẽ & Vệ sinh</div>
+            <div class="label label-4">Tay nghề cao</div>
+            <div class="label label-5">Thoải mái</div>
+            <div class="label label-6">Sức khỏe là trên hết</div>
         </div>
-        <div class="benefit">
-            <span class="number">2</span>
-            <p>Chất lượng cao</p>
-        </div>
-        <div class="benefit">
-            <span class="number">3</span>
-            <p>Sạch sẽ & Vệ sinh</p>
-        </div>
-        <div class="benefit">
-            <span class="number">4</span>
-            <p>Thoải mái</p>
-        </div>
-        <div class="benefit">
-            <span class="number">5</span>
-            <p>Sức khỏe là trên hết</p>
-        </div>
-        <img src="image/cho_trangchu.png" alt="Dog Image" class="dog-image">
-    </section>
+    </div>
 
     <section class="container">
         <h1>Chăm sóc cho thú cưng từ đầu đến đuôi</h1>
@@ -139,48 +124,53 @@
             <a href="https://www.instagram.com/river_t04/"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
-
-    <div id="appointmentChoiceModal" class="modal">
-        <link rel="stylesheet" href="css/appointmentChoiceModal.css">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Bạn đã có tài khoản chưa?</h2>
-            <button id="hasAccountButton">Đã có tài khoản</button>
-            <button id="noAccountButton">Chưa có tài khoản</button>
-        </div>
-    </div>
 </main>
+<!-- Pop-up nêu lưu ý -->
+<div id="appointmentPopup" class="modal">
+    <div class="modal-content">
+        <link rel="stylesheet" href="css/appointment-popup.css">
+        <span class="close-button">&times;</span>
+        <h2>Lưu ý trước khi đặt hẹn</h2>
+        <ul>
+            <li>Vui lòng điền đầy đủ thông tin cần thiết khi đặt hẹn.</li>
+            <li>Đảm bảo thời gian đặt hẹn không trùng với các công việc khác.</li>
+            <li>Thông tin dịch vụ sẽ được xác nhận qua email hoặc số điện thoại.</li>
+        </ul>
+        <button id="proceedToAppointment" class="confirm-button">Đặt Hẹn</button>
+    </div>
+</div>
+
 <script>
-    // JavaScript xử lý modal "Đặt Hẹn" // Hiện pop up
-    const appointmentButton = document.getElementById('appointmentButton');
-    const appointmentChoiceModal = document.getElementById('appointmentChoiceModal');
-    const closeModalButtons = document.querySelectorAll('.close-button');
-    const hasAccountButton = document.getElementById('hasAccountButton');
-    const noAccountButton = document.getElementById('noAccountButton');
+    // Lấy các phần tử trong DOM
+    const appointmentButton = document.getElementById('appointmentButton'); // Nút "Đặt Hẹn" trên trang chính
+    const appointmentPopup = document.getElementById('appointmentPopup'); // Pop-up
+    const closeButton = document.querySelector('.close-button'); // Nút đóng pop-up
+    const proceedToAppointment = document.getElementById('proceedToAppointment'); // Nút "Đặt Hẹn" trong pop-up
 
+    // Hiển thị pop-up khi bấm nút "Đặt Hẹn"
     appointmentButton.addEventListener('click', () => {
-        appointmentChoiceModal.style.display = 'block';
+        appointmentPopup.style.display = 'block';
     });
 
-    closeModalButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            appointmentChoiceModal.style.display = 'none';
-        });
+    // Đóng pop-up khi bấm nút "X"
+    closeButton.addEventListener('click', () => {
+        appointmentPopup.style.display = 'none';
     });
 
-    hasAccountButton.addEventListener('click', () => {
-        window.location.href = 'appointmentHaveAccount.jsp'; // Trang đăng nhập
-    });
-
-    noAccountButton.addEventListener('click', () => {
-        window.location.href = 'appointmentNoAccount.jsp'; // Trang không có tài khoản
-    });
-
+    // Đóng pop-up khi bấm ra ngoài
     window.addEventListener('click', (event) => {
-        if (event.target === appointmentChoiceModal) {
-            appointmentChoiceModal.style.display = 'none';
+        if (event.target === appointmentPopup) {
+            appointmentPopup.style.display = 'none';
         }
     });
+
+    // Chuyển hướng đến trang "appointmentHaveAccount.jsp" khi bấm "Đặt Hẹn"
+    proceedToAppointment.addEventListener('click', () => {
+        window.location.href = 'appointment.jsp';
+    });
+
 </script>
+
+
 </body>
 </html>
