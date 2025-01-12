@@ -6,8 +6,9 @@ body {
     background-position: center; /* Hiển thị ở giữa */
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif; /* Đổi font chữ thành Arial */
 }
+
 .container {
     max-width: 600px;
     margin: 50px auto;
@@ -15,7 +16,6 @@ body {
     background-color: #f9f3e7;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: 'Roboto', Arial, sans-serif;
 }
 
 /* Tiêu đề */
@@ -23,6 +23,7 @@ body {
     color: #002766;
     text-align: center;
     margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif; /* Đổi font chữ của tiêu đề */
 }
 
 /* Nhãn và input */
@@ -30,6 +31,7 @@ body {
     font-weight: bold;
     display: block;
     margin: 10px 0 5px;
+    font-family: Arial, Helvetica, sans-serif;/* Đổi font chữ của nhãn */
 }
 
 .container input,
@@ -39,6 +41,7 @@ body {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif; /* Đổi font chữ của input và select */
 }
 
 /* Checkbox */
@@ -57,8 +60,65 @@ body {
     font-size: 16px;
     cursor: pointer;
     width: 100%;
+    font-family: Arial, Helvetica, sans-serif;/* Đổi font chữ của nút */
 }
 
 .btn-submit:hover {
+    background-color: #880000;
+}
+input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.modal {
+    display: none; /* Ẩn modal theo mặc định */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Màu nền mờ */
+}
+
+.modal-content {
+    background-color: #f9f3e7;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.close-button {
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: red;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #a00000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
     background-color: #880000;
 }

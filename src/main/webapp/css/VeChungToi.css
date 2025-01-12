@@ -1,0 +1,123 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fdfaf4; /* Nền màu sáng dịu */
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #cec6bb; /* Đồng bộ màu thanh điều hướng */
+    border-bottom: 1px solid #ddd;
+}
+
+.nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #333; /* Đồng bộ màu chữ */
+    font-weight: bold;
+}
+
+.appointment-btn {
+    padding: 0.5rem 1rem;
+    background-color: #a00000; /* Màu đỏ chủ đạo */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.appointment-btn:hover {
+    background-color: #880000; /* Hiệu ứng hover */
+}
+
+/* About Section */
+.about {
+    padding: 2rem;
+    background-color: #fff8f1; /* Nền màu sáng hài hòa */
+    text-align: center;
+    border-radius: 20px;
+}
+
+.about h2 {
+    font-size: 2rem;
+    color: #002766; /* Màu chữ xanh đậm */
+    margin-bottom: 1rem;
+}
+
+.about p {
+    margin: 0.5rem 0;
+    line-height: 1.8;
+    font-size: 20px;
+    color: #000000;
+}
+
+/* Team Section */
+.team {
+    padding: 2rem;
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.team h2 {
+    font-size: 2rem;
+    color: #002766; /* Đồng bộ màu chữ */
+    margin-bottom: 1rem;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.team-member {
+    text-align: center;
+    width: 200px;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng nổi */
+    transition: transform 0.3s ease;
+}
+
+.team-member img:hover {
+    transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+}
+
+.team-member h3 {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #333; /* Màu chữ đồng bộ */
+}
+
+/* Slogan Section */
+.slogan {
+    padding: 2rem;
+    background-color: #a00000; /* Màu đỏ chủ đạo */
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    border-radius: 20px;
+
+}
+
+/* Footer */
+.footer {
+    padding: 1rem;
+    background-color: #cec6bb; /* Nền đồng bộ */
+    text-align: center;
+    border-top: 1px solid #ddd;
+    color: #333; /* Màu chữ đồng bộ */
+    font-size: 14px;
+}

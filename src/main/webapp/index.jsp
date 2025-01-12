@@ -5,7 +5,7 @@
   Time: 5:34 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="javax.servlet.http.HttpSession" %>
 
 <!DOCTYPE html>
@@ -16,17 +16,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<%
-
-    String username = (String) session.getAttribute("username");
-
-    if (username != null) { %>
-<a href="profile.jsp" class="profile-button">Hồ sơ</a>
-<%
-
-    }
-%>
-
 <!-- Thanh điều hướng -->
 <header>
     <nav class="navbar">
@@ -34,13 +23,23 @@
             <img src="image/logo.png" alt="Animal Doctors">
         </div>
         <ul class="nav-links">
-            <li><a href="#">Về Chúng Tôi</a></li>
+            <li><a href="VeChungToi.html">Về Chúng Tôi</a></li>
             <li><a href="#">Các Dịch Vụ</a></li>
             <li><a href="outreach.html">Cộng Đồng</a></li>
             <li><a href="branches.html">Các Chi Nhánh</a></li>
             <li><a href="VIPet.jsp">VIPet</a></li>
         </ul>
         <button id="appointmentButton" class="appointment-button">Đặt Hẹn</button>
+        <%
+
+            String username = (String) session.getAttribute("username");
+
+            if (username != null) { %>
+        <a href="profile.jsp" class="profile-button">Hồ sơ</a>
+        <%
+
+            }
+        %>
     </nav>
 </header>
 
@@ -66,20 +65,21 @@
     <section class="container">
         <h1>Chăm sóc cho thú cưng từ đầu đến đuôi</h1>
         <div class="grid">
-            <div class="card"><img src="image/cs1_trangchu.png" alt="Dog grooming"></div>
-            <div class="card"><img src="image/cs2_trangchu.png" alt="Dog grooming"></div>
-            <div class="card"><img src="image/cs3_trangchu.png" alt="Dog grooming"></div>
-            <div class="card"><img src="image/cs4_trangchu.png" alt="Cat grooming"></div>
-            <div class="card"><img src="image/cs5_trangchu.png" alt="Cat grooming"></div>
-            <div class="card"><img src="image/cs6_trangchu.png" alt="Cat grooming"></div>
+            <div class="card"><img src="image/cs1_trangchu.jpg" alt="Dog grooming"></div>
+            <div class="card"><img src="image/cs2_trangchu.jpg" alt="Dog grooming"></div>
+            <div class="card"><img src="image/cs3_trangchu.jpg" alt="Dog grooming"></div>
+            <div class="card"><img src="image/cs4_trangchu.jpg" alt="Cat grooming"></div>
+            <div class="card"><img src="image/cs5_trangchu.jpg" alt="Cat grooming"></div>
+            <div class="card"><img src="image/cs6_trangchu.jpg" alt="Cat grooming"></div>
+            <div class="card"><img src="image/cs7_trangchu.jpg" alt="Cat grooming"></div>
+            <div class="card"><img src="image/cs8_trangchu.jpg" alt="Cat grooming"></div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="newsletter">
             <p>Animal Doctors International</p>
-            <button class="register-button"><a href="register.jsp">Đăng ký </a></button>
-            <button class="login-button"><a href="login.jsp">Đăng nhập</a>Đăng</button>
+
         </div>
 
         <div class="footer-links">
@@ -170,7 +170,12 @@
     });
 
 </script>
-
-
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+        intent="WELCOME"
+        chat-title="GauGauMeoMeo"
+        agent-id="3bfaeefe-ce87-4b51-af62-f140193978c1"
+        language-code="en"
+></df-messenger>
 </body>
 </html>
