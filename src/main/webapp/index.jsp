@@ -19,7 +19,7 @@
 <!-- Thanh điều hướng -->
 <header>
     <nav class="navbar">
-        <div class="logo">
+        <div class="logo" href="index.jsp">
             <img src="image/logo.png" alt="Animal Doctors">
         </div>
         <ul class="nav-links">
