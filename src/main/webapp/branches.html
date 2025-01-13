@@ -10,17 +10,26 @@
 <header>
   <nav class="navbar">
     <div class="logo">
-      <img src="image/logo_trangchu.png" alt="Animal Doctors">
+      <img src="image/logo.png" alt="Animal Doctors">
     </div>
     <ul class="nav-links">
-      <li><a href="#">Về Chúng Tôi</a></li>
-      <li><a href="#">Các Dịch Vụ</a></li>
-      <li><a href="#">Cộng Đồng</a></li>
+      <li><a href="VeChungToi.html">Về Chúng Tôi</a></li>
+      <li><a href="Service.html">Các Dịch Vụ</a></li>
+      <li><a href="outreach.html">Cộng Đồng</a></li>
       <li><a href="branches.html">Các Chi Nhánh</a></li>
       <li><a href="VIPet.jsp">VIPet</a></li>
     </ul>
     <button id="appointmentButton" class="appointment-button">Đặt Hẹn</button>
+    <%
 
+    String username = (String) session.getAttribute("username");
+
+    if (username != null) { %>
+    <a href="profile.jsp" class="profile-button">Hồ sơ</a>
+    <%
+
+    }
+    %>
   </nav>
 </header>
 

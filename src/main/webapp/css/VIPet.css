@@ -5,15 +5,20 @@ body {
     color: #333;
     background-color: #fdfaf4;
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: #ffffff;
+    background-color: #cec6bb;
 }
-
+.logo{
+    max-height: 50px;
+    overflow: hidden;
+}
+.logo img {
+    width: 75px;
+    height: 50px;
+}
 .nav-links {
     list-style: none;
     display: flex;
@@ -25,16 +30,6 @@ body {
     color: #333;
     font-weight: 500;
 }
-
-.appointment-button {
-    background-color: #a00000;
-    color: #ffffff;
-    padding: 10px 40px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 /* VIPet Intro Section */
 .vipet-intro {
     display: flex;

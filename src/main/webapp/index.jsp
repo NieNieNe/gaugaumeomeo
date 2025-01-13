@@ -24,22 +24,21 @@
         </div>
         <ul class="nav-links">
             <li><a href="VeChungToi.html">Về Chúng Tôi</a></li>
-            <li><a href="#">Các Dịch Vụ</a></li>
+            <li><a href="Service.html">Các Dịch Vụ</a></li>
             <li><a href="outreach.html">Cộng Đồng</a></li>
             <li><a href="branches.html">Các Chi Nhánh</a></li>
             <li><a href="VIPet.jsp">VIPet</a></li>
         </ul>
         <button id="appointmentButton" class="appointment-button">Đặt Hẹn</button>
-        <%
-
-            String username = (String) session.getAttribute("username");
-
-            if (username != null) { %>
-        <a href="profile.jsp" class="profile-button">Hồ sơ</a>
-        <%
-
-            }
-        %>
+        <% String username = (String) session.getAttribute("username"); %>
+        <% if (username != null) { %>
+        <div class="profile-container">
+            <a href="profile.jsp">
+                <img src="<%= session.getAttribute("profileImage") != null ? session.getAttribute("profileImage") : "image/default-avatar.png" %>"
+                     alt="Hồ sơ" class="profile-avatar">
+            </a>
+        </div>
+        <% } %>
     </nav>
 </header>
 
