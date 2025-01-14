@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIPet Membership</title>
-    <link rel="stylesheet" href="css/VIPet.css">
+    <link rel="stylesheet" href="css/VIPet.css?v=1.0">
 </head>
 <body>
 <header>

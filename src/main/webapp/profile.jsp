@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hồ sơ cá nhân - PetCare</title>
-    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/profile.css?v=1.0">
 </head>
 <body>
 <div class="profile-container">
@@ -40,7 +40,12 @@
                 <p><strong>Số điện thoại:</strong> ${user.phonenumber}</p>
                 <p><strong>Ngày sinh:</strong> ${user.dateofBirth}</p>
                 <p><strong>Số lượng thú cưng:</strong> ${user.petsCount}</p>
+            </div>
 
+            <!-- Nút Lịch sử đặt hẹn -->
+            <div class="history-container">
+                <a href="history.jsp" class="history-btn">Xem lịch sử đặt hẹn</a>
+            </div>
         </div>
     </c:if>
 </div>

@@ -40,4 +40,5 @@ public class RegisterServlet extends HttpServlet {
         // Chuyển hướng đến trang index
         response.sendRedirect("index.jsp");
     }
+
 }

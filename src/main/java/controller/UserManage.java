@@ -9,6 +9,11 @@ public class UserManage {
     loadUsers();
     }
 
+    public static String getUsers(String username)
+    {
+        return username;
+    }
+
     private void loadUsers() {
          this.users = JDBIConnector.getJdbi().withHandle(handle->{
             return handle.createQuery("SELECT * FROM USERS").mapToBean(User.class).list();

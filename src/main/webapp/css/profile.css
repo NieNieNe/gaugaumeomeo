@@ -145,6 +145,40 @@ body {
     transform: translateY(2px); /* Nút hạ xuống khi nhấn */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }/* Bóng mờ khi nhấn */
+/* Container cho nút lịch sử đặt hẹn */
+.history-container {
+    text-align: center;
+    margin-top: 20px;
+}
 
+/* Nút lịch sử đặt hẹn */
+.history-btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    background: linear-gradient(135deg, #48c6ef, #6f86d6); /* Gradient tươi sáng */
+    padding: 12px 30px;
+    border-radius: 50px; /* Bo góc tròn */
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Bóng mờ nhẹ */
+}
+
+/* Hiệu ứng hover */
+.history-btn:hover {
+    background: linear-gradient(135deg, #6f86d6, #48c6ef); /* Đảo ngược gradient khi hover */
+    transform: translateY(-5px); /* Nâng nút lên khi hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng mạnh hơn */
+}
+
+/* Hiệu ứng nhấn */
+.history-btn:active {
+    background: linear-gradient(135deg, #48c6ef, #6f86d6); /* Đổi gradient khi nhấn */
+    transform: translateY(2px); /* Hạ nút xuống khi nhấn */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Bóng đổ nhẹ hơn */
+}
 
 

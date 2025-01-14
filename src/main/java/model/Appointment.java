@@ -1,4 +1,5 @@
 package model;
+import java.sql.Time;
 import java.util.Date;
 
 public class Appointment {
@@ -7,9 +8,43 @@ public class Appointment {
     private String appointment;
     private Date date;
     private Service service;
+    private String petType;
+    private Date appointmentDate;
+    private Time appointmentTime;
+    private String services;
 
     // Getters và Setters
+    public String getPetType() {
+        return petType;
+    }
 
+    public void setPetType(String petType) {
+        this.petType = petType;
+    }
+
+    public Date getAppointmentDate() {
+        return appointmentDate;
+    }
+
+    public void setAppointmentDate(Date appointmentDate) {
+        this.appointmentDate = appointmentDate;
+    }
+
+    public Time getAppointmentTime() {
+        return appointmentTime;
+    }
+
+    public void setAppointmentTime(Time appointmentTime) {
+        this.appointmentTime = appointmentTime;
+    }
+
+    public String getServices() {
+        return services;
+    }
+
+    public void setServices(String services) {
+        this.services = services;
+    }
 
     public long getIdAppoint() {
         return idAppoint;

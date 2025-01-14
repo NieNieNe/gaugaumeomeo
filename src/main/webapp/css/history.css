@@ -1,0 +1,66 @@
+/* Áp dụng font chữ cho toàn bộ trang */
+body {
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif, 'Segoe UI', 'Roboto', 'Noto Sans', 'Open Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Đảm bảo font chữ cho các tiêu đề */
+h1 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Đảm bảo font chữ cho các thẻ table và các phần tử liên quan */
+table, th, td {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Định dạng các phần tử trong bảng */
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+/* Dòng bảng chẵn sẽ có nền màu nhẹ */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Dòng bảng sẽ sáng màu khi hover */
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Định dạng header */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Container chứa bảng */
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* Đảm bảo không có khoảng cách thừa */
+* {
+    box-sizing: border-box;
+}
+
+/* Đảm bảo font chữ hỗ trợ tốt tiếng Việt */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+

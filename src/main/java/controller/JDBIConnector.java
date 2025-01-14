@@ -28,6 +28,13 @@ public class JDBIConnector {
         }
         jdbi = Jdbi.create(dataSource);
     }
+    public static void deleteUser(String username) {
+        getJdbi().withHandle(handle -> {
+            return handle.createUpdate("DELETE FROM USERS WHERE username = :username")
+                    .bind("username", username)
+                    .execute();
+        });
+    }
 
     public static void main(String[] args) {
 List<User> users = JDBIConnector.getJdbi().withHandle(handle->{
@@ -35,4 +42,11 @@ List<User> users = JDBIConnector.getJdbi().withHandle(handle->{
 });
     System.out.println(users);
     }
-}
+    public static List<User> getAllUsers() {
+        return getJdbi().withHandle(handle ->
+                handle.createQuery("SELECT username, password FROM USERS")
+                        .mapToBean(User.class)
+                        .list()
+        );
+}}
+

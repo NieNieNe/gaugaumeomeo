@@ -313,3 +313,26 @@ body {
     --df-messenger-button-primary-color: #d1974b;
     --df-messenger-input-border-color: #eae8e5;
 }
+.admin-button {
+    background-color: #a00000; /* Màu nền đỏ sẫm */
+    color: #ffffff; /* Màu chữ trắng rõ */
+    padding: 10px 20px; /* Khoảng cách bên trong nút */
+    border: none; /* Không viền */
+    border-radius: 5px; /* Góc bo tròn */
+    font-size: 16px; /* Cỡ chữ */
+    font-weight: bold; /* Tăng độ đậm cho chữ */
+    cursor: pointer; /* Hiệu ứng con trỏ */
+    text-decoration: none; /* Loại bỏ gạch chân */
+    display: inline-block; /* Hiển thị như block trong dòng */
+    text-align: center; /* Căn giữa văn bản */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+.admin-button:hover {
+    background-color: #880000; /* Màu nền khi hover */
+    color: #ffffff; /* Giữ màu chữ trắng rõ */
+}
+
+.nav-links .admin-button {
+    margin-left: 400px; /* Dịch qua bên phải */
+}

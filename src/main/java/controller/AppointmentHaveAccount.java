@@ -1,47 +1,62 @@
 package controller;
-
-import javax.servlet.*;
-import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.*;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-    public class AppointmentHaveAccount  extends HttpServlet {
+public class AppointmentHaveAccount extends HttpServlet {
+
+
+
+        @Override
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+            // Lấy thông tin từ request
+            String petType = request.getParameter("petType");
+            String appointmentDate = request.getParameter("date");
+            String appointmentTime = request.getParameter("appointment-time");
+            String[] servicesArray = request.getParameterValues("service");
+
+            // Gộp danh sách dịch vụ thành chuỗi
+            String services = (servicesArray != null) ? String.join(",", servicesArray) : "";
+
+            // Lấy username từ session
             HttpSession session = request.getSession();
-            Integer userId = (Integer) session.getAttribute("userId");
+            String username = (String) session.getAttribute("username");
 
-            String name = "", email = "", phone = "";
-
-            if (userId != null) {
-                try {
-                    // Kết nối CSDL
-           //         Class.forName("");
-                    Connection conn = DriverManager.getConnection("", "username", "password");
-
-                    // Truy vấn dữ liệu khách hàng
-                    String sql = "SELECT name, email, phone_number FROM users WHERE id= ?";
-                    PreparedStatement stmt = conn.prepareStatement(sql);
-                    stmt.setInt(1, userId);
-
-                    ResultSet rs = stmt.executeQuery();
-                    if (rs.next()) {
-                        name = rs.getString("name");
-                        email = rs.getString("email");
-                        phone = rs.getString("phone_number");
-                    }
-                    conn.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+            // Kiểm tra nếu username null (người dùng chưa đăng nhập)
+            if (username == null) {
+                response.sendRedirect("login.jsp"); // Chuyển hướng đến trang đăng nhập
+                return;
             }
 
-            // Gửi dữ liệu đến JSP
-            request.setAttribute("name", name);
-            request.setAttribute("email", email);
-            request.setAttribute("phone", phone);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("customerForm.jsp");
-            dispatcher.forward(request, response);
+            // Lưu dữ liệu vào cơ sở dữ liệu
+            try {
+                JDBIConnector.getJdbi().useHandle(handle -> {
+                    handle.createUpdate("INSERT INTO APPOINTMENTS (username, pet_type, appointment_date, appointment_time, services) VALUES (:username, :petType, :appointmentDate, :appointmentTime, :services)")
+                            .bind("username", username)
+                            .bind("petType", petType)
+                            .bind("appointmentDate", Date.valueOf(appointmentDate))
+                            .bind("appointmentTime", appointmentTime)
+                            .bind("services", services)
+                            .execute();
+                });
+                // Chuyển hướng đến trang xác nhận
+                response.sendRedirect("confirmation.jsp");
+            } catch (Exception e) {
+                e.printStackTrace();
+                response.getWriter().println("Error saving appointment: " + e.getMessage());
+            }
         }
-    }
+}
+
+
+
+
+
 
 

@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <title>GauGauMeoMeo</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=3.0">
 </head>
 <body>
 <!-- Thanh điều hướng -->
@@ -28,9 +28,14 @@
             <li><a href="outreach.html">Cộng Đồng</a></li>
             <li><a href="branches.html">Các Chi Nhánh</a></li>
             <li><a href="VIPet.jsp">VIPet</a></li>
+            <%
+                String username = (String) session.getAttribute("username");
+                if ("admin".equals(username)) {
+            %>
+            <li><a href="adminDashboard.jsp" class="admin-button">Quản Lý</a></li>
+            <% } %>
         </ul>
         <button id="appointmentButton" class="appointment-button">Đặt Hẹn</button>
-        <% String username = (String) session.getAttribute("username"); %>
         <% if (username != null) { %>
         <div class="profile-container">
             <a href="profile.jsp">
@@ -110,6 +115,8 @@
                 </ul>
             </div>
         </div>
+
+
 
         <div class="footer-contact">
             <h4>VIỆT NAM</h4>
