@@ -134,9 +134,16 @@
   });
   // Xử lý khi nhấn vào nút "Gửi"
   confirmButton.addEventListener("click", function () {
-    alert("Đặt lịch thành công!");
-    // Điều hướng về trang chủ
-    window.location.href = "index.jsp";
+    // Đóng modal
+    modal.style.display = "none";
+
+    // Gửi form
+    document.getElementById("appointmentForm").submit();
+
+    // Điều hướng về trang index.jsp sau khi gửi form
+    setTimeout(() => {
+      window.location.href = "index.jsp";
+    }, 1000);
   });
 </script>
 </body>

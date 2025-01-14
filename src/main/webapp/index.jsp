@@ -55,17 +55,6 @@
         <p>Chăm sóc lông là điều cần thiết để giữ cho thú cưng của bạn trông xinh đẹp tuyệt vời...</p>
         <p>Đôi bên cùng có lợi, cho bạn và cho thú cưng của bạn.</p>
     </section>
-    <div class="benefits">
-        <div class="dog-head">
-            <div class="label label-1">An toàn</div>
-            <div class="label label-2">Chất lượng cao</div>
-            <div class="label label-3">Sạch sẽ & Vệ sinh</div>
-            <div class="label label-4">Tay nghề cao</div>
-            <div class="label label-5">Thoải mái</div>
-            <div class="label label-6">Sức khỏe là trên hết</div>
-        </div>
-    </div>
-
     <section class="container">
         <h1>Chăm sóc cho thú cưng từ đầu đến đuôi</h1>
         <div class="grid">

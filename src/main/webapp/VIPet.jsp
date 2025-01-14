@@ -78,27 +78,27 @@
     </section>
 
     <section class="vipet-form">
-        <h2>Join our pet-loving family</h2>
+        <h2>Hãy gửi đánh giá trả nghiệm của bạn nhaaa</h2>
         <form action="<%= request.getContextPath() %>/VipetServlet" method="post">
-            <label for="name">Your name*</label>
+            <label for="name">Tên của bạn:*</label>
             <input type="text" id="name" name="name" required>
 
-            <label for="email">Your email*</label>
+            <label for="email">email:*</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="number">Your number*</label>
+            <label for="number">Số điện thoại:*</label>
             <input type="text" id="number" name="number" required>
 
-            <label for="remarks">Remarks</label>
+            <label for="remarks">Gửi phản hồi của bạn tại đây:*</label>
             <textarea id="remarks" name="remarks"></textarea>
 
-            <button type="submit" class="btn-submit">Submit</button>
+            <button type="submit" class="btn-submit">Gửi</button>
         </form>
     </section>
 </main>
 
 <footer class="footer">
-    <p>&copy; 2024 Animal Doctors International. All Rights Reserved.</p>
+    <p>&copy; 2025 Gâu Gâu Meo Meo cố lên. All Rights Reserved.</p>
 </footer>
 </body>
 </html>

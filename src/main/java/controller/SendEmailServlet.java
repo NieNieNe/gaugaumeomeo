@@ -8,38 +8,32 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.mail.*;
-import javax.mail.internet.*;
-
 import java.io.IOException;
-import java.util.Properties;
 
 @WebServlet("/sendEmail")
-public class SendEmailServlet extends HttpServlet  {
+public class SendEmailServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Lấy dữ liệu từ form
         String name = request.getParameter("name");
-        String phone = request.getParameter("phone");
         String email = request.getParameter("email");
-        String date = request.getParameter("date");
-        String time = request.getParameter("appointment-time");
-        String services = request.getParameter("service");
+        String subject = "Xác nhận đặt lịch hẹn";
+        String body = "<h1>Thông tin đặt lịch</h1>" +
+                "<p>Họ và tên: " + name + "</p>" +
+                "<p>Email: " + email + "</p>";
 
+        // Gửi email
         iJavaMail emailService = new emailService();
+        boolean result = emailService.send(email, subject, body);
 
-        String subject = "Xác Nhận Đặt Lịch";
-        String content = "<h1>Thông tin đặt lịch</h1>" +
-                "<p><strong>Họ và tên:</strong> " + name + "</p>" +
-                "<p><strong>Số điện thoại:</strong> " + phone + "</p>" +
-                "<p><strong>Email:</strong> " + email + "</p>" +
-                "<p><strong>Ngày:</strong> " + date + "</p>" +
-                "<p><strong>Giờ:</strong> " + time + "</p>" +
-                "<p><strong>Dịch vụ:</strong> " + services + "</p>";
-
-        emailService.send(email, subject, content);
-
-
+        // Kiểm tra nếu gửi thành công
+        if (result) {
+            // Chuyển hướng về index.jsp
+            response.sendRedirect("index.jsp");
+        } else {
+            // Hiển thị thông báo lỗi nếu gửi thất bại
+            request.setAttribute("error", "Gửi email thất bại. Vui lòng thử lại!");
+            request.getRequestDispatcher("appointment.jsp").forward(request, response);
+        }
     }
-
 }
