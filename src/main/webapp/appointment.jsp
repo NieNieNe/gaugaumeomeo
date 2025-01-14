@@ -77,7 +77,7 @@
   });
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<form action="controller/SendEmailServlet" , method="get">
+<form action="controller/SendEmailServlet" , method="post">
 <div id="confirmationModal" class="modal">
   <div class="modal-content">
     <span class="close-button">&times;</span>
