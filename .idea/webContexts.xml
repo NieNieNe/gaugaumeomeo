@@ -3,8 +3,12 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
+<<<<<<< HEAD
         <entry key="file://$PROJECT_DIR$/src/main/webapp/changeUserPasswordProcess.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/history.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
+=======
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/appointment.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
+>>>>>>> dc06fba4e9b9c8bc2d0439743355fe2e946abf07
         <entry key="file://$PROJECT_DIR$/src/main/webapp/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/login.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
       </map>

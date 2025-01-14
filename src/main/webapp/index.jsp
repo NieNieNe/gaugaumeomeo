@@ -19,7 +19,7 @@
 <!-- Thanh điều hướng -->
 <header>
     <nav class="navbar">
-        <div class="logo">
+        <div class="logo" href="index.jsp">
             <img src="image/logo.png" alt="Animal Doctors">
         </div>
         <ul class="nav-links">
@@ -39,7 +39,7 @@
         <% if (username != null) { %>
         <div class="profile-container">
             <a href="profile.jsp">
-                <img src="<%= session.getAttribute("profileImage") != null ? session.getAttribute("profileImage") : "image/default-avatar.png" %>"
+                <img src image/default-avatar.png
                      alt="Hồ sơ" class="profile-avatar">
             </a>
         </div>

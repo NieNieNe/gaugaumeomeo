@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/appointment.css?v=1.0">
 </head>
 <body>
+<body>
 <div class="container">
   <h2>Thông tin đặt hẹn :</h2>
     <!-- Họ và Tên -->
@@ -76,7 +77,7 @@
   });
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-
+<form action="controller/SendEmailServlet" , method="get">
 <div id="confirmationModal" class="modal">
   <div class="modal-content">
     <span class="close-button">&times;</span>
@@ -89,7 +90,7 @@
     <button id="confirmButton">Gửi</button>
   </div>
 </div>
-
+</form>
 <script>
   const modal = document.getElementById("confirmationModal");
   const closeButton = document.querySelector(".close-button");
@@ -136,12 +137,8 @@
     alert("Đặt lịch thành công!");
     // Điều hướng về trang chủ
     window.location.href = "index.jsp";
-    // Gửi form tới server
-    document.querySelector("form").submit();
   });
-
-
 </script>
-
 </body>
+
 </html>

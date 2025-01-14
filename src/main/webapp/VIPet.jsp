@@ -17,7 +17,7 @@
 <body>
 <header>
     <nav class="navbar">
-        <div class="logo">
+        <div class="logo" href="index.jsp">
             <img src="image/logo.png" alt="Animal Doctors">
         </div>
         <ul class="nav-links">
@@ -27,20 +27,8 @@
             <li><a href="branches.html">Các Chi Nhánh</a></li>
             <li><a href="VIPet.jsp">VIPet</a></li>
         </ul>
-        <button id="appointmentButton" class="appointment-button">Đặt Hẹn</button>
-        <%
-
-            String username = (String) session.getAttribute("username");
-
-            if (username != null) { %>
-        <a href="profile.jsp" class="profile-button">Hồ sơ</a>
-        <%
-
-            }
-        %>
     </nav>
 </header>
-
 <main>
     <section class="vipet-intro">
         <div class="intro-image">

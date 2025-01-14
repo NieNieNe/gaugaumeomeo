@@ -6,7 +6,6 @@ body {
     color: #333;
     background-color: #fdfaf4;
 }
-
 /* Thanh điều hướng */
 .navbar {
     display: flex;
@@ -33,6 +32,29 @@ body {
     color: #333;
     font-weight: 500;
 }
+
+.appointment-button {
+    background-color: #a00000;
+    color: #ffffff;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #a00000; /* Viền đỏ cho avatar */
+    object-fit: cover;
+    cursor: pointer;
+}
+
 .hero {
     text-align: center;
     color: #510404;
