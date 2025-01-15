@@ -8,6 +8,11 @@ import java.util.Properties;
 public class emailService implements iJavaMail {
     @Override
     public boolean send(String to, String subject, String body) {
+        if (to == null || to.trim().isEmpty()) {
+            System.err.println("Recipient email address is null or empty");
+            return false; // Hoặc ném IllegalArgumentException nếu cần
+        }
+
         // Cấu hình thuộc tính SMTP
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -40,4 +45,5 @@ public class emailService implements iJavaMail {
             return false;
         }
     }
+
 }

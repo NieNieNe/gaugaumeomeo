@@ -1,19 +1,17 @@
-/* General Reset */
+/* Đặt kiểu chung */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    margin: 0;
+    padding: 0;
     color: #333;
-    background-color: #fdfaf4; /* Nền màu sáng dịu */
+    background-color: #fdfaf4;
 }
-
-/* Header */
 /* Thanh điều hướng */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #cec6bb;
+    background-color: #fdfaf4;
 }
 .logo{
     max-height: 50px;
@@ -27,7 +25,6 @@ body {
     list-style: none;
     display: flex;
     gap: 20px;
-    align-items: center
 }
 
 .nav-links a {
@@ -57,6 +54,7 @@ body {
     object-fit: cover;
     cursor: pointer;
 }
+
 /* About Section */
 .about {
     padding: 2rem;

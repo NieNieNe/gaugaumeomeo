@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #cec6bb;
+    background-color: #fdfaf4;
 }
 .logo{
     max-height: 50px;

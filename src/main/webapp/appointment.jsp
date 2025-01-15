@@ -1,7 +1,5 @@
 <%
-  String name = (String) request.getAttribute("name");
-  String email = (String) request.getAttribute("email");
-  String phone = (String) request.getAttribute("phone");
+  String error = request.getParameter("error");
 %>
 <!DOCTYPE html>
 <html lang="vi">
@@ -13,20 +11,26 @@
   <link rel="stylesheet" href="css/appointment.css?v=1.0">
 </head>
 <body>
-<body>
 <div class="container">
-  <h2>Thông tin đặt hẹn :</h2>
+  <h2>Thông tin đặt hẹn</h2>
+
+  <!-- Hiển thị lỗi nếu có -->
+  <% if (error != null) { %>
+  <p class="error" style="color: red;"><%= error %></p>
+  <% } %>
+
+  <form action="SendEmailServlet" method="post">
     <!-- Họ và Tên -->
     <label for="name">Họ và tên:</label>
-    <input type="text" id="name" name="name" value="<%= name != null ? name : "" %>" placeholder="Nhập họ và tên" required>
+    <input type="text" id="name" name="name" placeholder="Nhập họ và tên" required>
 
     <!-- Số điện thoại -->
     <label for="phone">Số điện thoại:</label>
-    <input type="text" id="phone" name="phone" value="<%= phone != null ? phone : "" %>" placeholder="Nhập số điện thoại" required>
+    <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
 
     <!-- Email -->
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" value="<%= email != null ? email : "" %>" placeholder="Nhập email" required>
+    <input type="email" id="email" name="email" placeholder="Nhập email" required>
 
     <!-- Loại thú cưng -->
     <label for="petType">Loại thú cưng:</label>
@@ -43,23 +47,33 @@
     <!-- Chọn thời gian -->
     <label for="appointment-time">Chọn thời gian:</label>
     <input type="text" id="appointment-time" name="appointment-time" required>
-
     <!-- Chọn dịch vụ -->
     <label>Chọn dịch vụ:</label>
     <input type="checkbox" name="service" value="grooming"> Chăm sóc lông
     <input type="checkbox" name="service" value="bathing"> Tắm
     <input type="checkbox" name="service" value="nails"> Cắt móng
     <input type="checkbox" name="service" value="deworm"> Sổ giun
+    <button type="submit">Xác nhận</button>
+  </form>
 
-  <button type="button" class="btn-submit" id="showModal">Xác nhận</button>
 </div>
-
+<div id="confirmationModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Xác Nhận Thông Tin</h2>
+    <p>Họ và tên: <strong id="confirmName"></strong></p>
+    <p>Số điện thoại: <strong id="confirmPhone"></strong></p>
+    <p>Email: <strong id="confirmEmail"></strong></p>
+    <p>Thời gian: <strong id="confirmTime"></strong></p>
+    <p>Dịch vụ: <strong id="confirmService"></strong></p>
+    <button id="confirmButton">Gửi</button>
+  </div>
+</div>
 <!-- Thêm JavaScript -->
 <script>
   // Đặt giá trị ngày tối thiểu cho input date
   const today = new Date();
   const dateInput = document.getElementById("date");
-
   // Format ngày hiện tại theo chuẩn "YYYY-MM-DD"
   const formattedDate = today.toISOString().split('T')[0];
   dateInput.min = formattedDate; // Ngày tối thiểu là hôm nay
@@ -76,76 +90,48 @@
     minuteIncrement: 30 // Tăng theo từng 30 phút
   });
 </script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<form action="controller/SendEmailServlet" , method="post">
-<div id="confirmationModal" class="modal">
-  <div class="modal-content">
-    <span class="close-button">&times;</span>
-    <h2>Xác Nhận Thông Tin</h2>
-    <p>Họ và tên: <strong id="confirmName"></strong></p>
-    <p>Số điện thoại: <strong id="confirmPhone"></strong></p>
-    <p>Email: <strong id="confirmEmail"></strong></p>
-    <p>Thời gian: <strong id="confirmTime"></strong></p>
-    <p>Dịch vụ: <strong id="confirmService"></strong></p>
-    <button id="confirmButton">Gửi</button>
-  </div>
-</div>
-</form>
 <script>
-  const modal = document.getElementById("confirmationModal");
-  const closeButton = document.querySelector(".close-button");
-  const showModal = document.getElementById("showModal");
-  const confirmButton = document.getElementById("confirmButton");
+   const form = document.querySelector("form");
+   const modal = document.getElementById("confirmationModal");
+   const closeButton = document.querySelector(".close-button");
+   const confirmButton = document.getElementById("confirmButton");
 
-  // Hiển thị modal khi nhấn nút "Xác nhận"
-  showModal.addEventListener("click", function () {
-    // Lấy dữ liệu từ form
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
-    const email = document.getElementById("email").value;
-    const time = document.getElementById("appointment-time").value;
-    const services = Array.from(
-            document.querySelectorAll('input[name="service"]:checked')
-    )
-            .map(service => service.value)
-            .join(", ");
+   // Lấy các phần tử trong modal
+   const confirmName = document.getElementById("confirmName");
+   const confirmPhone = document.getElementById("confirmPhone");
+   const confirmEmail = document.getElementById("confirmEmail");
+   const confirmTime = document.getElementById("confirmTime");
+   const confirmService = document.getElementById("confirmService");
 
-    // Điền thông tin vào modal
-    document.getElementById("confirmName").innerText = name;
-    document.getElementById("confirmPhone").innerText = phone;
-    document.getElementById("confirmEmail").innerText = email;
-    document.getElementById("confirmTime").innerText = time;
-    document.getElementById("confirmService").innerText = services;
+   // Hiển thị modal khi nhấn nút xác nhận
+   form.addEventListener("submit", (event) => {
+     event.preventDefault(); // Ngăn form gửi ngay
 
-    // Hiển thị modal
-    modal.style.display = "block";
-  });
+     // Lấy dữ liệu từ các trường trong form
+     confirmName.textContent = document.getElementById("name").value;
+     confirmPhone.textContent = document.getElementById("phone").value;
+     confirmEmail.textContent = document.getElementById("email").value;
+     confirmTime.textContent = document.getElementById("appointment-time").value;
 
-  // Đóng modal khi nhấn nút "x"
-  closeButton.addEventListener("click", function () {
-    modal.style.display = "none";
-  });
+     const selectedServices = Array.from(document.querySelectorAll("input[name='service']:checked"))
+             .map(service => service.value)
+             .join(", ");
+     confirmService.textContent = selectedServices || "Không chọn";
 
-  // Đóng modal khi nhấn bên ngoài modal
-  window.addEventListener("click", function (event) {
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-  // Xử lý khi nhấn vào nút "Gửi"
-  confirmButton.addEventListener("click", function () {
-    // Đóng modal
-    modal.style.display = "none";
+     modal.style.display = "block"; // Hiển thị modal
+   });
 
-    // Gửi form
-    document.getElementById("appointmentForm").submit();
+   // Đóng modal khi nhấn nút đóng
+   closeButton.addEventListener("click", () => {
+     modal.style.display = "none";
+   });
 
-    // Điều hướng về trang index.jsp sau khi gửi form
-    setTimeout(() => {
-      window.location.href = "index.jsp";
-    }, 1000);
-  });
-</script>
+   // Gửi form khi nhấn nút xác nhận trong modal
+   confirmButton.addEventListener("click", () => {
+     modal.style.display = "none";
+     form.submit(); // Gửi form
+   });
+</SCRIPT>
+
 </body>
-
 </html>

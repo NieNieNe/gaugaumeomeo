@@ -8,6 +8,6 @@ public class emailProperty {
 
     public static final String APP_EMAIL = "tranthimytuyenahh@gmail.com"; // your email
 
-    public static final String APP_PASSWORD = "hphj mxcx ctls vdvg"; // your password
+    public static final String APP_PASSWORD = "qddz rqod xzvh qjtr"; // your password
 
 }

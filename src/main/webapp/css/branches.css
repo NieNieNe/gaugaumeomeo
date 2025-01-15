@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #cec6bb;
+    background-color: #fdfaf4;
 }
 .logo{
     max-height: 50px;
@@ -53,7 +53,6 @@ body {
     object-fit: cover;
     cursor: pointer;
 }
-
 
 .button-primary {
     background-color: #8b0000;

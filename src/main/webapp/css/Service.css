@@ -1,15 +1,16 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #cec6bb;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fdfaf4;
 }
 /* Thanh điều hướng */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #cec6bb;
+    background-color: #fdfaf4;
 }
 .logo{
     max-height: 50px;

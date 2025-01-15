@@ -17,16 +17,30 @@
 <body>
 <header>
     <nav class="navbar">
-        <div class="logo" href="index.jsp">
+        <a href="index.jsp" class="logo">
             <img src="image/logo.png" alt="Animal Doctors">
-        </div>
+        </a>
         <ul class="nav-links">
             <li><a href="VeChungToi.html">Về Chúng Tôi</a></li>
             <li><a href="Service.html">Các Dịch Vụ</a></li>
             <li><a href="outreach.html">Cộng Đồng</a></li>
             <li><a href="branches.html">Các Chi Nhánh</a></li>
             <li><a href="VIPet.jsp">VIPet</a></li>
+            <%
+                String username = (String) session.getAttribute("username");
+                if ("admin".equals(username)) {
+            %>
+            <li><a href="adminDashboard.jsp" class="admin-button">Quản Lý</a></li>
+            <% } %>
         </ul>
+        <a href="index.jsp"><button id="appointmentButton" class="appointment-button">Đặt Hẹn</button></a>
+        <% if (username != null) { %>
+        <div class="profile-container">
+            <a href="profile.jsp">
+                <img src =image/anhHoSO.png alt="Hồ sơ" class="profile-avatar">
+            </a>
+        </div>
+        <% } %>
     </nav>
 </header>
 <main>

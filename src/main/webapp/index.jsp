@@ -19,9 +19,9 @@
 <!-- Thanh điều hướng -->
 <header>
     <nav class="navbar">
-        <div class="logo" href="index.jsp">
+        <a href="index.jsp" class="logo">
             <img src="image/logo.png" alt="Animal Doctors">
-        </div>
+        </a>
         <ul class="nav-links">
             <li><a href="VeChungToi.html">Về Chúng Tôi</a></li>
             <li><a href="Service.html">Các Dịch Vụ</a></li>
@@ -39,8 +39,7 @@
         <% if (username != null) { %>
         <div class="profile-container">
             <a href="profile.jsp">
-                <img src image/default-avatar.png
-                     alt="Hồ sơ" class="profile-avatar">
+                <img src =image/anhHoSO.png alt="Hồ sơ" class="profile-avatar">
             </a>
         </div>
         <% } %>
