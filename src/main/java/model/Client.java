@@ -3,12 +3,22 @@ package model;
 public class Client {
     private long id;
     private String name;
-    private Pet pet;
     private String pass;
     private String email;
     private String phoneNumber;
 
-    // Getters và Setters
+    // Constructors
+    public Client() {}
+
+    public Client(long id, String name, String pass, String email, String phoneNumber) {
+        this.id = id;
+        this.name = name;
+        this.pass = pass;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
+    // Getters and Setters
     public long getId() {
         return id;
     }
@@ -23,14 +33,6 @@ public class Client {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
     }
 
     public String getPass() {
@@ -57,31 +59,11 @@ public class Client {
         this.phoneNumber = phoneNumber;
     }
 
-    // Phương thức
-    public boolean register() {
-        // Logic đăng ký
-        return true;
-    }
-
-    public boolean login() {
-        // Logic đăng nhập
-        return true;
-    }
-
-    public void viewAppointments() {
-        // Logic xem lịch hẹn
-    }
-
-    public void updatePet() {
-        // Logic cập nhật thông tin thú cưng
-    }
-
     @Override
     public String toString() {
         return "Client{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", pet=" + pet +
                 ", pass='" + pass + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +

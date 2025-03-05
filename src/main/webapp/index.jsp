@@ -71,7 +71,6 @@
     <footer class="footer">
         <div class="newsletter">
             <p>Animal Doctors International</p>
-
         </div>
 
         <div class="footer-links">

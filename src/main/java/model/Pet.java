@@ -1,21 +1,36 @@
 package model;
 
 public class Pet {
-    private String id;
+    private String petId;
     private String petName;
     private String petType;
     private int petAge;
-    private int weight;
-    private int length;
-    private int height;
+    private float weight;
+    private float length;
+    private float height;
+    private Client client;
 
-    // Getters và Setters
-    public String getId() {
-        return id;
+    // Constructors
+    public Pet() {}
+
+    public Pet(String petId, String petName, String petType, int petAge, float weight, float length, float height, Client client) {
+        this.petId = petId;
+        this.petName = petName;
+        this.petType = petType;
+        this.petAge = petAge;
+        this.weight = weight;
+        this.length = length;
+        this.height = height;
+        this.client = client;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    // Getters and Setters
+    public String getPetId() {
+        return petId;
+    }
+
+    public void setPetId(String petId) {
+        this.petId = petId;
     }
 
     public String getPetName() {
@@ -42,44 +57,36 @@ public class Pet {
         this.petAge = petAge;
     }
 
-    public int getWeight() {
+    public float getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(float weight) {
         this.weight = weight;
     }
 
-    public int getLength() {
+    public float getLength() {
         return length;
     }
 
-    public void setLength(int length) {
+    public void setLength(float length) {
         this.length = length;
     }
 
-    public int getHeight() {
+    public float getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(float height) {
         this.height = height;
     }
 
-    public void getPet() {
-        // Logic lấy thông tin thú cưng
+    public Client getClient() {
+        return client;
     }
 
-    @Override
-    public String toString() {
-        return "Pet{" +
-                "id='" + id + '\'' +
-                ", petName='" + petName + '\'' +
-                ", petType='" + petType + '\'' +
-                ", petAge=" + petAge +
-                ", weight=" + weight +
-                ", length=" + length +
-                ", height=" + height +
-                '}';
+    public void setClient(Client client) {
+        this.client = client;
     }
 }
+

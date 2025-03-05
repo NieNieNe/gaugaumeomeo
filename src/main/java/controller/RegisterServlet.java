@@ -1,6 +1,9 @@
 package controller;
 
 
+import model.User;
+import model.UserManage;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,16 +29,16 @@ public class RegisterServlet extends HttpServlet {
         List<User> users = userManage.getUsers();
         System.out.println("Loaded users: " + users);
         // Lưu dữ liệu vào cơ sở dữ liệu
-        JDBIConnector.getJdbi().useHandle(handle -> {
-            handle.createUpdate("INSERT INTO USERS (fullname, dateofBirth, petsCount, phoneNumber, username, password) VALUES (:fullname, :dateofBirth, :petsCount, :phoneNumber, :username, :password)")
-                    .bind("fullname", fullname)
-                    .bind("dateofBirth", dateofBirth)
-                    .bind("petsCount", petsCount)
-                    .bind("phoneNumber", phoneNumber)
-                    .bind("username", username)
-                    .bind("password", password)
-                    .execute();
-        });
+//        JDBIConnector.getJdbi().useHandle(handle -> {
+//            handle.createUpdate("INSERT INTO USERS (fullname, dateofBirth, petsCount, phoneNumber, username, password) VALUES (:fullname, :dateofBirth, :petsCount, :phoneNumber, :username, :password)")
+//                    .bind("fullname", fullname)
+//                    .bind("dateofBirth", dateofBirth)
+//                    .bind("petsCount", petsCount)
+//                    .bind("phoneNumber", phoneNumber)
+//                    .bind("username", username)
+//                    .bind("password", password)
+//                    .execute();
+//        });
 
         // Chuyển hướng đến trang index
         response.sendRedirect("index.jsp");

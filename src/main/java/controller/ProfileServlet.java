@@ -1,6 +1,9 @@
 
     package controller;
 
+import model.User;
+import model.UserManage;
+
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,6 +30,7 @@ import javax.servlet.http.HttpSession;
             if (fullUserInfo != null) {
                 // Truyền dữ liệu vào JSP
                 request.setAttribute("user", fullUserInfo);
+
             } else {
                 // Nếu không tìm thấy user, hiển thị lỗi
                 request.setAttribute("error", "Không tìm thấy thông tin người dùng.");

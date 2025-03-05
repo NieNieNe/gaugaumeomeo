@@ -5,9 +5,19 @@ public class Staff {
     private String staffId;
     private String name;
     private String position;
-    private Date schedule;
+    private Store store;
 
-    // Getters và Setters
+    // Constructors
+    public Staff() {}
+
+    public Staff(String staffId, String name, String position, Store store) {
+        this.staffId = staffId;
+        this.name = name;
+        this.position = position;
+        this.store = store;
+    }
+
+    // Getters and Setters
     public String getStaffId() {
         return staffId;
     }
@@ -32,31 +42,11 @@ public class Staff {
         this.position = position;
     }
 
-    public Date getSchedule() {
-        return schedule;
+public Store getStore() {
+        return store;
     }
 
-    public void setSchedule(Date schedule) {
-        this.schedule = schedule;
-    }
-
-    // Phương thức
-    public boolean authenticAppointment() {
-        // Logic xác thực lịch hẹn
-        return true;
-    }
-
-    public void viewSchedule() {
-        // Logic xem lịch làm việc
-    }
-
-    @Override
-    public String toString() {
-        return "Staff{" +
-                "staffId='" + staffId + '\'' +
-                ", name='" + name + '\'' +
-                ", position='" + position + '\'' +
-                ", schedule=" + schedule +
-                '}';
+    public void setStore(Store store) {
+        this.store = store;
     }
 }

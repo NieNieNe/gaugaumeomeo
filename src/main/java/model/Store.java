@@ -8,7 +8,17 @@ public class Store {
     private String address;
     private long revenue;
 
-    // Getters và Setters
+    // Constructors
+    public Store() {}
+
+    public Store(String storeId, String name, String address, long revenue) {
+        this.storeId = storeId;
+        this.name = name;
+        this.address = address;
+        this.revenue = revenue;
+    }
+
+    // Getters and Setters
     public String getStoreId() {
         return storeId;
     }
@@ -39,47 +49,5 @@ public class Store {
 
     public void setRevenue(long revenue) {
         this.revenue = revenue;
-    }
-
-    // Phương thức
-    public void getStoreInfo() {
-        System.out.println("Store Info: " + this.toString());
-    }
-
-    public Collection<Appointment> getAllAppointments() {
-        // Logic xử lý (ví dụ lấy từ database)
-        return null;
-    }
-
-    public Appointment getAppointment(long id) {
-        // Logic xử lý (ví dụ lấy từ database)
-        return null;
-    }
-
-    public void saveClient(Client client) {
-        // Logic xử lý
-    }
-
-    public void saveBooking(Booking booking) {
-        // Logic xử lý
-    }
-
-    public long calculateRevenue() {
-        // Logic xử lý
-        return 0;
-    }
-
-    public void manageStaff() {
-        // Logic xử lý
-    }
-
-    @Override
-    public String toString() {
-        return "Store{" +
-                "storeId='" + storeId + '\'' +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", revenue=" + revenue +
-                '}';
     }
 }

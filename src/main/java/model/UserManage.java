@@ -1,25 +1,27 @@
-package controller;
+package model;
+
+//import controller.JDBIConnector;
 
 import java.util.List;
 
 public class UserManage {
     private List<User> users;
 
-    public UserManage() {
-    loadUsers();
-    }
+//    public UserManage() {
+//    loadUsers();
+//    }
 
     public static String getUsers(String username)
     {
         return username;
     }
 
-    private void loadUsers() {
-         this.users = JDBIConnector.getJdbi().withHandle(handle->{
-            return handle.createQuery("SELECT * FROM USERS").mapToBean(User.class).list();
-        });
-
-    }
+//    private void loadUsers() {
+//         this.users = JDBIConnector.getJdbi().withHandle(handle->{
+//            return handle.createQuery("SELECT * FROM USERS").mapToBean(User.class).list();
+//        });
+//
+//    }
 
     public List<User> getUsers() {
 

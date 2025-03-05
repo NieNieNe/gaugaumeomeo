@@ -1,4 +1,9 @@
 package controller;
+import Dao.ClientDAO;
+import model.Client;
+import model.User;
+import model.UserManage;
+
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -22,21 +27,17 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
     String url = "/login.jsp"; // Mặc định chuyển đến trang đăng nhập
     String error = null; // Biến để lưu thông báo lỗi
 
-    UserManage userManage = new UserManage();
-    List<User> users = userManage.getUsers();
-    System.out.println("Loaded users: " + users); // Debug danh sách user
+    ClientDAO clientDAO = new ClientDAO();
+    Client user = clientDAO.login(username, password);
 
-    User user = userManage.findUser(username);
+System.out.print(user);
+
     if (user != null ) {
-        System.out.println("Found user: " + user.getUsername()); // Debug người dùng
-        if (user.getPassword().equals(password)) {
+        System.out.println("Found user: " + user.getName()); // Debug người dùng
             url = "/index.jsp";
             session.setAttribute("au", true);
             session.setAttribute("user", user);
-            session.setAttribute("users", users);
-        } else {
-            error = "Sai mật khẩu";
-        }
+            request.getRequestDispatcher(url).forward(request, response);
     } else {
         error = "Không tìm thấy username";
     }
@@ -54,6 +55,8 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ClientDAO clienDao = new ClientDAO();
+
         doGet(request, response);
     }}
 

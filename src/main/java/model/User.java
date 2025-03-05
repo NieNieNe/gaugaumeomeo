@@ -1,10 +1,8 @@
-package controller;
-
-
-
+package model;
 import java.io.Serializable;
 
 public class User implements Serializable {
+    private int id;
     private String username;
     private String password;
     private String fullname;
@@ -15,9 +13,7 @@ public class User implements Serializable {
     private String appointment_time;
     private String service;
     private String petType;
-
-
-
+    private String email;
 
     public User() {
 
@@ -35,7 +31,18 @@ public class User implements Serializable {
         this.petType = petType;
 
     }
-
+public int getId() {
+        return id;
+}
+public void setId(int id) {
+        this.id = id;
+}
+public String getEmail(){
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
     public String getPetsCount() {
         return petsCount;
     }

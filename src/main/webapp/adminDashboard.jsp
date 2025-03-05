@@ -1,15 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: FPT SHOP
-  Date: 1/14/2025
-  Time: 11:34 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.List" %>
-<%@ page import="controller.User" %>
-<%@ page import="controller.JDBIConnector" %>
-<%@ page import="java.net.URLEncoder" %>
+<%@ page import="model.Appointment" %>
+<%@ page import="Dao.AppointmentDAO" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,33 +11,49 @@
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
-<h1>Admin Dashboard</h1>
-<table>
+<h1>Danh sách cuộc hẹn</h1>
+
+<table border="1">
     <thead>
     <tr>
-        <th>Username</th>
-        <th>Password</th>
-        <th>Action</th>
+        <th>ID</th>
+        <th>Họ và Tên</th>
+        <th>Số Điện Thoại</th>
+        <th>Email</th>
+        <th>Thú Cưng</th>
+        <th>Ngày</th>
+        <th>Thời Gian</th>
+        <th>Dịch Vụ</th>
     </tr>
     </thead>
     <tbody>
     <%
-        List<User> users = JDBIConnector.getAllUsers();
-        for (User user : users) {
+        // Lấy danh sách cuộc hẹn từ attribute
+        List<Appointment> appointments = (List<Appointment>) request.getAttribute("appointments");
+
+        if (appointments != null && !appointments.isEmpty()) {
+            for (Appointment appointment : appointments) {
     %>
     <tr>
-        <td><%= user.getUsername() %></td>
-        <td><%= user.getPassword() %></td>
-        <td>
-            <!-- Nút xóa tài khoản -->
-            <form action="delete.jsp" method="post" onsubmit="return confirm('Bạn có chắc chắn muốn xóa tài khoản này?');">
-                <input type="hidden" name="username" value="<%= user.getUsername() %>">
-                <button type="submit">Xóa</button>
-            </form>
-        </td>
+        <td><%= appointment.getIdAppoint() %></td>
+        <td><%= appointment.getUserName() %></td>
+        <td><%= appointment.getSdt() %></td>
+        <td><%= appointment.getEmail() %></td>
+        <td><%= appointment.getPet() %></td>
+        <td><%= appointment.getDate() %></td>
+        <td><%= appointment.getTime() %></td>
+        <td><%= appointment.getService().getNameService() %></td>
+    </tr>
+    <%
+        }
+    } else {
+    %>
+    <tr>
+        <td colspan="8">Không có cuộc hẹn nào.</td>
     </tr>
     <% } %>
     </tbody>
 </table>
+
 </body>
 </html>
